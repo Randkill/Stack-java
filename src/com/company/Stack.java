@@ -5,17 +5,17 @@ import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
 public class Stack {
     private int top, size;
     private char[] s;
-    Stack(int arraySize){
-        top = 0;
+    Stack(int arraySize){           //top`s function is a pointer which points to one
+        top = 0;                    //index further than the last item added to our stack
         this.size = arraySize;
         s = new char[size];
     }
 
     public void push(char ch){
-        if(!isFull()){
-            s[top] = ch;
+        if(!isFull()){              //if our stack is not full
+            s[top] = ch;            //it means it has space to push new items
             top++;
-        }else {
+        }else {                     //Error message
             System.out.print("Stack is Full , remove items from it!\n");
         }
     }
@@ -24,7 +24,7 @@ public class Stack {
         if(!isEmpty()){
             top--;
             return s[top];
-        }else {
+        }else {                     //it will return '0' if stack is Empty
             System.out.print("Stack is Empty!\n");
             return '0';         //'0' would be a symbol of stack being empty
         }
